@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # resources :contacts
+  resource :contacts, only: [:new, :create]
   resource :articles, only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
