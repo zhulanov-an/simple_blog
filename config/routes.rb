@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resource :contacts, only: [:new, :create]
-  resource :articles, only: [:new, :create]
+  resource :articles, only: [:new, :create], path_names: {:new => ''}
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
