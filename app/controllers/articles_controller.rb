@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update]
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
   def index
     @articles = Article.all
   end
@@ -30,6 +30,13 @@ class ArticlesController < ApplicationController
       else
         format.html{render :edit}
       end
+    end
+  end
+
+  def destroy
+    @article.destroy
+    respond_to do |format|
+      format.html {redirect_to articles_path, notice: 'Article was succerfully destroyed.'}
     end
   end
 
