@@ -1,14 +1,30 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Label:</strong>
-  <%= @article.title %>
+<p>  
+  <p>
+    <strong>Label:</strong>
+    <%= @article.title %>
+  </p>
+  <p>
+    <strong>Text:</strong>
+    <%= @article.text %>
+  </p>
 </p>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<div>
+  <%= form_for([@article, @article.comments.build]) do |f| %>
+  <div>
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div>
+  <%= f.label :text %><br/>
+    <%= f.text_area :body %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+  <% end %>
+</div>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
