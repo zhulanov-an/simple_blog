@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :articles, only: [:new, :create, :index, :edit, :update, :destroy]
   get 'about' => 'home#about'
   get 'terms' => 'home#terms'
-  resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
