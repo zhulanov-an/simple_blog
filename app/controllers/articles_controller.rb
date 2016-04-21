@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def new
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html {redirect_to articles_url, notice: 'Article was successfully updated.'}
+        format.html {redirect_to article_url, notice: 'Article was successfully updated.'}
       else
         format.html{render :edit}
       end
