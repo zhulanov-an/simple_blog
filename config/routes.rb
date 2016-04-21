@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :articles, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :articles
   get 'about' => 'home#about'
   get 'terms' => 'home#terms'
   # The priority is based upon order of creation: first created -> highest priority.
