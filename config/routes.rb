@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :articles do
-    resources :comments
+    resources :comments, only: [:create]
   end
   get 'about' => 'home#about'
   get 'terms' => 'home#terms'
