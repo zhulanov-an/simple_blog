@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:create]
+  
   def create
     get_article.comments.create(get_params)
     redirect_to article_path(get_article)
