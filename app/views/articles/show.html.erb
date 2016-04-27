@@ -1,28 +1,28 @@
 <p id="notice"><%= notice %></p>
-<p>  
-  <p>
+<div class="form-group">
     <strong>Label:</strong>
     <%= @article.title %>
-  </p>
-  <p>
+</div>
+<div class="form-group">
     <strong>Text:</strong>
     <%= @article.text %>
-  </p>
-</p>
+</div>
+
+  
 
 <div>
   <%= form_for([@article, @article.comments.build]) do |f| %>
-  <div>
+  <div class="form-group">
     <%if current_user %>
       <%= f.hidden_field :author, :value => current_user.username %>
     <% end %>
   </div>
-  <div>
-  <%= f.label :text %><br/>
-    <%= f.text_area :body %>
+  <div class="form-group">
+  <%= f.label "Enter comment" %><br/>
+    <%= f.text_area :body, :class => "form-control", :rows => "3" %>
   </div>
-  <div>
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit "Send comment", :class => "btn btn-primary" %>
   </div>
   <% end %>
 </div>
