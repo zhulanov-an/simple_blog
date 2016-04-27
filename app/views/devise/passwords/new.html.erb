@@ -1,16 +1,31 @@
-<h2>Forgot your password?</h2>
+<div class="row">
+  <div class="col-xs-4"></div>
+  <div class="col-xs-4"><h2>Forgot your password?</h2></div>
+  <div class="col-xs-4"></div>
+</div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post , :class => "form-horizontal"}) do |f| %>
+<%= devise_error_messages! %>
+
+
+<div class="field form-group">
+
+  <%= f.label :email, :class => "col-xs-4 control-label" %>
+  <div class="col-xs-3">
+  <%= f.email_field :email, autofocus: true, :class => "form-control" %>
   </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+<div class="actions form-group">
+<div class="col-xs-offset-4 col-xs-12">
+  <%= f.submit "Send me reset password instructions", :class => "btn btn-primary" %>
   </div>
+</div>
 <% end %>
+<div class="row">
+  <div class="col-xs-4"></div>
+  <div class="col-xs-4"><%= render "devise/shared/links" %></div>
+  <div class="col-xs-4"></div>
+</div>
 
-<%= render "devise/shared/links" %>
