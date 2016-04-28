@@ -18,4 +18,11 @@ describe Article do
     end
   end
 
+  describe "#last_comment" do
+    it "returns last comment" do
+      article = FactoryGirl.create(:article_with_comments)
+      expect(article.last_comment.body).to eq("Comment body 3")
+    end
+  end
+
 end
