@@ -1,7 +1,6 @@
 require "spec_helper"
 
-describe "something" do
-  it "Does something" do
-
-  end
+describe Article do
+  it {should validate_presence_of(:title)}
+  it {should validate_presence_of(:text)}
 end
