@@ -5,6 +5,13 @@ describe Article do
   describe "validations" do
     it {should validate_presence_of(:title)}
     it {should validate_presence_of(:text)}
+    it "validate maximum char to title" do
+      should validate_length_of(:title).is_at_most(140).with_long_message('is too long (maximum is 140 characters)')
+    end
+    it "validate maximum char to text" do
+      should validate_length_of(:text).is_at_most(4000).with_long_message('is too long (maximum is 4000 characters)')
+    end
+
   end
 
   describe "relations" do
