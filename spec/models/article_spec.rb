@@ -10,5 +10,12 @@ describe Article do
   describe "relations" do
     it {should have_many :comments}
   end
-  
+
+  describe "#subject" do
+    it "returns the article title" do
+      article = FactoryGirl.create(:article, :title => 'Lorem ipsum')
+      expect(article.subject).to eq 'Lorem ipsum'
+    end
+  end
+
 end
