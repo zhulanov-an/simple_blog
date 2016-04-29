@@ -21,4 +21,5 @@
 
 en:
   registration:
-    sign_up: "Sign up page!"
+    sign_up: "Sign up"
+    sign_in: "Sign in"
